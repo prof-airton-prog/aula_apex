@@ -6,20 +6,20 @@ public with sharing class chaveamento {
 
 
 /*
-Integer x = 20;
-switch on x {
-    when 1 {
-        System.debug('X vale: '+x);
+String fruta = 'abacate';
+switch on fruta {
+    when 'abacate', 'manga' {
+        System.debug('A fruta é: '+fruta);
     }
-    when 2 {
-        System.debug('X vale: '+x);
+    when null {
+        System.debug('X vale: null');
     }
-    when 3 {
-        System.debug('X vale: '+x);
+    when 'maçã' {
+        System.debug('A fruta é: '+fruta);
     }
     when else {
         System.debug('X não corresponde a nenhum valor');
     }
-}
-    */
+}*/
+    
 
