@@ -1,5 +1,5 @@
 public class DescontoPorCliente {
-    public static void ajustarDesconto(Id contaId) {
+    public void ajustarDesconto(Id contaId) {
         Account conta = [SELECT Id, Name, Status__c, Desconto__c FROM Account WHERE Id = :contaId]; //Query SOQL
         switch on conta.Status__c {
             when 'Novo' {
@@ -25,7 +25,8 @@ public class DescontoPorCliente {
 }
 
 
-DescontoPorCliente.ajustarDesconto('001bm000016MlxGAAS');
+DescontoPorCliente dpc = new DescontoPorCliente();
+dpc.ajustarDesconto('001bm000016MlxGAAS');
 
 
 
