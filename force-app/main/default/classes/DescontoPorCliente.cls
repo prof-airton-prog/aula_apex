@@ -24,10 +24,10 @@ public class DescontoPorCliente {
     }
 }
 
-
+/*
 DescontoPorCliente dpc = new DescontoPorCliente();
 dpc.ajustarDesconto('001bm000016MlxGAAS');
-
+*/
 
 
 
