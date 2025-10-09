@@ -135,23 +135,4 @@ for(String a:chaves){
 //remove pela chave
 mapaSObject.remove('conta4');
 System.debug(mapaSObject);
-
-
-Filial__c filial = new Filial__c();
-filial.Name = 'Filial Deserto do Saara';
-filial.Email__c = 'filialdeserto@gmail.com';
-filial.Conta__c = '001bm000016MCeoAAG';
-insert filial;
-
-Filial__c filial = new Filial__c();
-filial.Name = 'Filial Deserto do Atacama';
-filial.Email__c = 'filialdesertoatacama@gmail.com';
-insert filial;
-
-//formato da query: SELECT <campos, que, eu, quero, trazer> FROM <nome_do_sObject> WHERE <condicao>]
-List<Account> listaContasEstadoCA = [SELECT Name, BillingCountry, BillingCity FROM Account WHERE BillingState = 'CA'];
-for(Account conta:listaContasEstadoCA){
-    System.debug(conta.Name);
-}
-
 */
