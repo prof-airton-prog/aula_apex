@@ -75,3 +75,81 @@ public with sharing class StatementsSOQL
 //     System.debug('Menor dos montantes de oportunidades: ' + ar.get('expr3'));
 //     System.debug('Quantidade de oportunidades: ' + ar.get('expr4'));
 // }
+
+
+// List<Filial__c> f = [SELECT Id, Name, UF__c FROM Filial__c WHERE UF__c INCLUDES ('SP;RN')];
+// System.debug('Lista:' + f);
+
+// List<Filial__c> f = [SELECT Id, Name, UF__c FROM Filial__c WHERE UF__c EXCLUDES ('SP;RN')];
+// System.debug('Lista:' + f);
+
+// List<Filial__c> f = [SELECT Id, Name, UF__c FROM Filial__c WHERE UF__c EXCLUDES ('')];
+// System.debug('Lista:' + f);
+
+// List<Filial__c> f = [SELECT Id, Name, UF__c FROM Filial__c];
+// for(Filial__c fi:f){
+//     System.debug(fi.Name);
+// }
+
+
+// List<AggregateResult> agg = [SELECT COUNT(Name) FROM Filial__c];
+// System.debug('Lista:' + agg[0].get('expr0'));
+
+
+// List<AggregateResult> agg = [SELECT COUNT_DISTINCT(Name) FROM Filial__c];
+// System.debug('Lista:' + agg[0].get('expr0'));
+
+
+// List<Task> tasks = [SELECT WhatId, WhoId, Description, Subject FROM Task];
+// for(Task t:tasks){
+//     System.debug(t);
+// } //Quando a task está relacionada com uma conta, o WhatId é da conta
+
+// List<Task> tasks = [SELECT WhatId, WhoId, Description, Subject FROM Task];
+// for(Task t:tasks){
+//     System.debug(t);
+// } //Quando a task está relacionada com uma oportunidade, o WhatId é da oportunidade
+
+// List<Task> tasks = [SELECT WhatId, WhoId, Description, Subject FROM Task];
+// for(Task t:tasks){
+//     System.debug(t);
+// } //Quando a task está relacionada com um case, o WhatId é do case e assim por diante
+
+
+
+// List<Task> tasks = [SELECT Id, Subject, Status,
+//                     TYPEOF What
+//                     WHEN Account THEN Id, Name, BillingCity
+//                     WHEN Case THEN Subject END FROM Task];
+
+// for(Task t:tasks){
+//     System.debug('---');
+//     System.debug('Task Id: '+ t.Id);
+//     System.debug('Task Subject: '+ t.Subject);
+//     if(t.What instanceof Account){
+//         Account acc = (Account)t.What;
+//         System.debug('Conta relacionada: ' + acc.Name);
+//     }else if(t.What instanceof Case){
+//         Case cse = (Case)t.What;
+//         System.debug('Case subject: ' + cse.Subject);
+//     }
+// }
+
+
+// List<Task> tasks = [SELECT Id, Subject, Status,
+//                     TYPEOF Who
+//                     WHEN Contact THEN Id, Name
+//                     WHEN Lead THEN Name END FROM Task];
+
+// for(Task t:tasks){
+//     System.debug('---');
+//     System.debug('Task Id: '+ t.Id);
+//     System.debug('Task Subject: '+ t.Subject);
+//     if(t.Who instanceof Contact){
+//         Contact cont = (Contact)t.Who;
+//         System.debug('Contato relacionada: ' + cont.Name);
+//     }else if(t.Who instanceof Lead){
+//         Lead led = (Lead)t.Who;
+//         System.debug('Lead Name: ' + led.Name);
+//     }
+// }
