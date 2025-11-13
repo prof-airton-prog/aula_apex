@@ -50,3 +50,12 @@ public with sharing class SOSL3 {
 //     System.debug(o.Name + ' - ' + o.Amount);
 // }
 
+// String company = 'Un?ted* OR Coca*';
+// List<List<sObject>> listas = [FIND :company IN NAME FIELDS RETURNING Account(Name, Id ORDER BY Name ASC)];// LIMIT 2];
+// for(List<sObject> listasInternas:listas){
+//     for(sObject contas:listasInternas){
+//         System.debug(contas);
+//     }
+// }
+
+//Wildcards: * ou ?
