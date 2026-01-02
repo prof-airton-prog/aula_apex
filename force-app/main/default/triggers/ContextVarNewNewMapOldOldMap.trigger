@@ -7,26 +7,29 @@ trigger ContextVarNewNewMapOldOldMap on Opportunity (before update) {
     // Integer posicao = 0;
     // for(Opportunity op:listaOpAtualizadas){
     //     for(Integer i=0;i<tamanhoListaAtual;i++){
-    //         listaGeral[i][0].add('New');
-    //         listaGeral[i][1].add(op);
+    //         Object novo = 'New';
+    //         listaGeral[i][0] = novo;
+    //         listaGeral[i][1] = op;
     //         posicao++;
     //     }
     // }
 
     // for(Opportunity op:listaOpAntesAtualizacao){
-    //     for(Integer i=posicao+1;i<listaOpAntesAtualizacao;i++){
-    //         listaGeral[i][0].add('New');
-    //         listaGeral[i][1].add(op);
+    //     for(Integer i=posicao+1;i<tamanhoListaAntes;i++){
+    //         Object velho = 'Old';
+    //         listaGeral[i][0] = velho;
+    //         listaGeral[i][1] = op;
     //     }
     // }
 
     // for(List<Object> op:listaGeral){
     //     String tipo = (String)op[0];
-    //     Opportunity op = (Opportunity)op[1];
-    //     System.debug(' - Tipo: ' + tipo +' - Opportunity Name: ' + op.Name + ' StageName: '+op.StageName);
+    //     Opportunity opp = (Opportunity)op[1];
+    //     System.debug(' - Tipo: ' + tipo +' - Opportunity Name: ' + opp.Name + ' StageName: '+opp.StageName);
     // }
 
-    // for(Opportunity op:listaGeral){
+    // for(Object ob:listaGeral){
+    //     Opportunity op = (Opportunity)ob;
     //     System.debug(op.Name + ' - ' + op.StageName);
     // }
 }
@@ -41,6 +44,7 @@ trigger ContextVarNewNewMapOldOldMap on Opportunity (before update) {
 // for(Opportunity op:[SELECT Id, Name, CloseDate, StageName FROM Opportunity WHERE StageName = 'Closed Won' LIMIT 100]){
 //     op.StageName = 'Prospecting';
 //     listaOportunidades.add(op);
+//     // System.debug(op.Name + ' - ' + op.StageName);
 // }
 
 // try{
