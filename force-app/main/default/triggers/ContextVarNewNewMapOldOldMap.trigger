@@ -1,6 +1,15 @@
 trigger ContextVarNewNewMapOldOldMap on Opportunity (before update) {
     List<Opportunity> listaOpAtualizadas = Trigger.new;
     List<Opportunity> listaOpAntesAtualizacao = Trigger.old;
+
+    for(Opportunity op:listaOpAntesAtualizacao){
+        System.debug('Opportunity Name (old): ' + op.Name + ' StageName: '+op.StageName);
+    }
+
+    for(Opportunity op:listaOpAtualizadas){
+        System.debug('Opportunity Name (new): ' + op.Name + ' StageName: '+op.StageName);
+    }
+    
     // Integer tamanhoListaAtual = listaOpAtualizadas.size();
     // Integer tamanhoListaAntes = listaOpAntesAtualizacao.size();
     // List<List<Object>> listaGeral = new List<List<Object>>();
