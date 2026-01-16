@@ -14,5 +14,29 @@ public with sharing class ClasseDatabase {
 }
 
 
-// Boolean res = ClasseDatabase.gravaRegistro(new Account(Phone='1125636987'));
-// System.debug(res?'Gravado com sucesso':'Erro ao gravar');
+Boolean res = ClasseDatabase.gravaRegistro(new Opportunity(Name='Oportunidade 1', StageName='Prospecting', CloseDate=Date.today()));
+System.debug(res?'Gravado com sucesso':'Erro ao gravar');
+
+
+
+// Database.SaveResult[getErrors=
+// (
+//     Database.Error
+//     [
+//         getFields=(Name);
+//         getMessage=Required fields are missing: [Name];
+//         getStatusCode=REQUIRED_FIELD_MISSING;
+//     ]
+// )
+// ;getId=null
+// ;isSuccess=false;]
+
+// DataBase.SaveResult => sr
+// DataBase.Error => er
+
+// sr[0]
+//     er[0] => //getFields
+//     er[1] => //getMessage
+//     er[2] => //getStatusCode
+// sr[1] => //getId
+// sr[2] => //isSuccess
